@@ -36,9 +36,11 @@ function Coin() {
   const [loading, setLoading] = useState(true);
   const { coinId } = useParams<RouteParams>();
   const { state } = useLocation<RouteState>();
+
   return (
     <Container>
       <Header>
+        {/* state가 존재하면 name을 가져오고, 존재하지 않는다면 "Loading..."을 가져온다. */}
         <Title>{state?.name || "Loading..."}</Title>
       </Header>
       {loading ? <Loader>Loading...</Loader> : null}
